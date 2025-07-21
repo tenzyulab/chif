@@ -16,6 +16,15 @@
         nodejs_20
         nodePackages.pnpm
       ];
+      shellHook = with pkgs; ''
+        if [ -f .env.local ]; then
+          set -a
+          source .env.local
+          set +a
+        fi
+
+        exec zsh
+      '';
     };
   });
 }
