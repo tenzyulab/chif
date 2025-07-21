@@ -13,8 +13,7 @@
         zsh
       ];
       packages = with pkgs; [ 
-        nodejs_20
-        nodePackages.pnpm
+        bun
       ];
       shellHook = with pkgs; ''
         if [ -f .env.local ]; then
